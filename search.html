@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Search</title>
+		<script type="text/javascript" src="script/search.js"></script> <!-- search lib -->
+		<script type="text/javascript" src="script/timer.js"></script> <!-- timer lib -->
+        <link rel="stylesheet" type="text/css" href="style/style.css" /> <!-- general css -->
+		<script type="text/javascript" src="script/prettifycode/prettify.js"></script> <!-- code highlight -->
+    	<link rel="stylesheet" type="text/css" href="style/prettifycode/prettifyDark.css" /> <!-- code highlight -->
+        <script type="text/javascript">
+            var initSearch = function () {
+                var input = document.getElementById("inputId");
+                var myTimer = new Timer(
+                    1000,
+                    200,
+                    function () {
+                        console.log("SEARCHED TEXT: " + input.value);
+                        var sources = document.getElementById("sources").getElementsByTagName("pre");
+                        var search = new JsSearch.Search(input.value, sources);
+                        var r = search.getResults();
+                        var result = new JsSearch.Result(r, document.getElementById("result-container"), "results");
+                        result.clean();
+                        result.render();
+
+                        if(document.getElementById("results").getElementsByClassName('prettyprint').length != 0) prettyPrint();
+                    }
+                );
+
+                input.onkeyup = function () {
+                    document.getElementById("result-container").textContent = "Searching ...";
+                    myTimer.restart();
+                }
+
+                var numSources = document.getElementById("sources").getElementsByTagName("pre").length;
+                document.getElementById("result-container").textContent = "Database entities: " + numSources;
+            }
+        </script>
+	</head>
+	<body onload="initSearch();">
+		<span>
+			<input type="text" id="inputId" value="Enter keywords here" onclick="if(this.value=='Enter keywords here') this.value=''" />
+		</span>
+
+		<br />
+
+        <span id="result-container"></span> <!-- search results container -->
+
+        <div id="sources">
+    <pre>
+// The following code should hide concept names on selection Least/Most idea for Predictive Markets
+// Predictive Market, PM, Concept, Stimulus, Stimuli, Least, Most, name
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt; 
+    $(document).ready( function() {
+        $('div[class$="singleMediaMedia"] p').hide();
+    });
+&lt;/script&gt;
+    </pre>
+    <pre>
+// Single Stimulus concept alignment CSS
+// CSS, stimulus, stimuli, concept, alignment, align, left, right, center, single, media
+// How to - navigate to the juicer properties and add the following css override
+.singleMediaDescription{text-align:left};
+    </pre>
+    <pre>
+// Hide concept names for single stimulus concept
+// Open the MCC in the main template, and click on the Presentation tab paste the following code into the Javascript box
+
+$(document).ready( function() {
+  $('div[id$="Media_Generated_MediaControl_single-presenter"] p').hide();
+});     
+    </pre>
+    <pre>
+// Filter by responses for checkbox, radio, radio grid, checkbox grid question
+// Keywords - checkbox, radio, grid, radiogrid, checkboxgrid, filter, hide, show, get selected, collect, save selection, saver, store, storer, hidden div, pipe, delimited list, numsubs
+// filter radio/checkbox question
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4-min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+function fnSubmit_check() {
+    fnQuestion_isAnswered('savn_q1', 'checkbox'); 
+}
+
+function fnSubmit_success() {
+    strListSelected = "|" + fnAnswer_getSelectedNumSub(savn_q1, 'checkbox') + "|";
+    // strListSelected = strListSelected + "14|"; - If you need to force None of the Above 
+
+    fnAnswer_setTexbox(hiddenTextbox, strListSelected);  
+}
+
+fnSubmit(fnSubmit_check, '', fnSubmit_success);
+&lt;/script&gt;
+
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4-min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+    fnAnswer_filterNumSub('qTwo', 'checkbox', fnQuestion_getCustomText('hiddenNumSub'), 'show');
+&lt;/script&gt;
+
+// filter grid question by rows
+fnAnswer_filterNumSubGrid('savnGrid', 'radiogrid', fnQuestion_getCustomText('hiddenNumSub'), 'show');
+
+//filter grid question by columns
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4-min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+ $("#Contents").css("width","98%");
+ fnHotfix_grid("savnGrid", "checkboxgrid", 25, "", false, false);
+ fnAnswer_filterNumSubGrid("savnGrid", "checkboxgrid", "", "hide", "", $("#q17seletion").html(), "show", true);
+&lt;/script&gt;
+
+// If you need to force Other to be shown
+fnAnswer_filterNumSub('qTwo', 'checkbox', fnQuestion_getCustomText('hiddenNumSub') + '|13|' , 'show');  
+&lt;/script&gt;
+
+// This goes into the FREE TEXT
+&lt;div id="hiddenNumSub" style="display:none;"&gt;[InsertQuestionAnswer Id="87159" Text="Hidden : QuestionOne Textbox"]&lt;/div&gt;
+&lt;div style="display:none;"&gt;&lt;/div&gt;
+    
+    
+// HIDE
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4-min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+    var hideThose = fnQuestion_getCustomText('hiddenNumSub');
+    //if not used, function for hiding will not work
+    var listToHide = fnDelimitedList_deleteEnds(hideThose); 
+    fnAnswer_filterNumSub('savnTerca', 'checkbox', listToHide, 'hide');
+&lt;/script&gt;     
+    </pre>
+    <pre>
+// Hide Progress Bar in the Juicer
+// Keywords - bubble, thermometer, css
+// How to - Juicer Properties -&gt; CSS override - paste the code bellow
+#ProgressDiv {
+    display:none;
+}       
+    </pre>
+    <pre>
+// Change bubble text 
+// Keywords - bubble, rotation, predictive market, Sedric, text, replace, set
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4-min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+    fnSpeechBubble_setText('Which of these faces best expresses ...'); 
+&lt;/script&gt; 
+    </pre>
+    <pre>
+// Validate number textbox input
+// Keywords - integer, float, decimal, floating point, textbox, input type text, box, field
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4-min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+
+var isNumber = function (val) {
+    return (isNaN(val))? false: true;
+}
+
+function fnSubmit_check() {
+    fnQuestion_isAnswered('qspended', 'textbox'); 
+}
+
+function fnSubmit_success() {
+    if (!isNumber(fnAnswer_getTextbox('qspended'))) {
+        fnDialog_text('Please select your favoirite brand');
+        fnGlobalCancelSubmit(true);
+    }
+}
+
+fnSubmit(fnSubmit_check, '', fnSubmit_success);
+&lt;/script&gt;
+    </pre>
+    <pre>
+// Count how many answers are selected for checkbox question
+// Keywords - answered, answer, specific number of responses, response, select, check
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4-min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+
+function fnSubmit_check() {
+    fnQuestion_isAnswered('savnBrands', 'checkbox'); 
+}
+
+function fnSubmit_success() {
+    var intCounter = Number(fnAnswer_isSelectedNumSub('savnLikes', 'checkbox', '1|2|3|4|5|6|7|8|9', 'OR', true)); 
+
+    if (intCounter &gt; 1)  { // Change it to the number of answers you want to.
+        fnDialog_text('Please select only one answer'); 
+        fnGlobalCancelSubmit(true);
+    }
+}
+
+fnSubmit(fnSubmit_check, '', fnSubmit_success);
+&lt;/script&gt;     
+    </pre>
+    <pre>
+// 7 point scale smiley faces
+// Keywords - grid, radiogrid, rating, images, faces, smiles, answers
++3&lt;br/&gt;&lt;img src="images/smile3.gif"/&gt;
++2&lt;br/&gt;&lt;img src="images/smile2.gif"/&gt;
++1&lt;br/&gt;&lt;img src="images/smile1.gif"/&gt;
+0&lt;br/&gt;&lt;img src="images/smile0.gif"/&gt;
+-1&lt;br/&gt;&lt;img src="images/smile-1.gif"/&gt;
+-2&lt;br/&gt;&lt;img src="images/smile-2.gif"/&gt;
+-3&lt;br/&gt;&lt;img src="images/smile-3.gif"/&gt;      
+    </pre>
+    <pre>
+// Track the order that stimulus are presented
+// Keywords - order, stimulus, stimuli, present, presented, evaluate, evaluated
+
+&lt;script src="js/custom/customFunctions-1.0.4-min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+    $(document).ready(function(){
+        var conceptId = parseInt($("#conceptId").html());
+        var orderOfStimulus = $("#orderOfStimulus").html();
+
+        if(orderOfStimulus != "-1")
+            orderOfStimulus = orderOfStimulus + "|" + conceptId;
+        else
+            orderOfStimulus = conceptId;
+
+        fnAnswer_setTexbox("hiddenOrderOfStimulus", orderOfStimulus);
+
+        $(hiddenOrderOfStimulus).hide();
+    });
+&lt;/script&gt;
+
+// Add textbox question from the system with savn = hiddenOrderOfStimulus
+// Add freetext with the following data in it:
+&lt;span syle="display:none;" id="conceptId"&gt;[Alternative Stimulus Text]&lt;/span&gt;
+&lt;span syle="display:none;" id="orderOfStimulus"&gt;[InsertQuestionAnswer Text="Hidden:: Order Of Stimulus"]&lt;/span&gt;
+// [Alternative Stimulus Text] - set the concept ID as alt stim text for each stimulus      
+    </pre>
+    <pre>
+// Hide grid answers
+// Keywords - hide, grid, radiogrid, checkboxgrid, asnwers, responses, response, answer
+// Page Properties  -&gt;  Advanced Properties  -&gt;  CSS Overrides:  #Content {display:none;}
+// This hides the content div, which is everything between the page header and page footer.  Once we have amended the grid questions html and any other JQuery processing we then unhide the content div using $('#Content').show(); .
+// Also, you can rotate or shuffle the rows it will work.
+
+// Action Commands:
+&lt;script src="js/custom/customFunctions-1.0.3.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+fnHotfix_gridratingWidth('savnGrid', 'radiogrid', 40) ;
+&lt;/script&gt;
+
+// Hide 6th column radio on rows 1 to 12 – hides the radios in the 6th column in rows 1 to 12 and removes the onclick on their parent &lt;TD&gt;s.
+// Also adds the blue background colour (#6699CC);
+
+&lt;script type="text/javascript"&gt;
+fnAnswer_hideGridElement('savnGrid', 'radiogrid', '6', '1|2|3|4|5|6|7|8|9|10|11|12', '#6699CC');
+$('#Content').show();
+&lt;/script&gt;
+
+// Hide 4th and 5th column radio on rows 1 to 5
+&lt;script type="text/javascript"&gt;
+fnAnswer_hideGridElement('savnGrid', 'radiogrid', '4|5', '1|2|3|4|5', '#999999');
+$('#Content').show();
+&lt;/script&gt;
+
+// Hide 3rd column radio on rows 1 to 5
+
+&lt;script type="text/javascript"&gt;
+fnAnswer_hideGridElement('savnGrid', 'radiogrid', '3', '1|2|3|4|5', '#666666');
+$('#Content').show();
+&lt;/script&gt;     
+    </pre>
+    <pre>
+// Other please specify template code
+// Keywords - radio, checkbox, show , hide
+
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4-min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+
+var questionSavn = "";
+var questionType = "checkbox";
+var otherSavn = "savnOther";
+var otherNumSub = 10;
+
+var isSelectedOther = false;
+
+$(document).ready(function () {
+    $(savnOther).hide();
+});
+
+
+$(questionSavn).click( function() {
+    answers = '|' + fnAnswer_getSelectedNumSub(questionSavn, questionType) + '|';
+    if(answers.indexOf('|' + otherNumSub + '|') != -1){
+        $(savnOther).show("slow");
+        isSelectedOther = true;
+    } else {
+        fnAnswer_setTexbox(otherSavn,'');
+        isSelectedOther = false;
+        $(savnOther).hide("slow");
+    }
+});
+
+function fnSubmit_check() {
+    fnQuestion_isAnswered(questionSavn, questionType);
+    if(isSelectedOther) fnQuestion_isAnswered(otherSavn, 'textbox');
+}
+
+fnSubmit(fnSubmit_check);
+&lt;/script&gt; 
+    </pre>
+    <pre>
+// Align horizontal stimulus media list of images in the middle of the screen
+// Keywords - center, list of stimulus, stimuli, alignment
+  
+&lt;script type="text/javascript"&gt;
+$(document).ready(function() {
+    var stim_media_div = $("#StimulusMedia_Generated_MediaControl_Media");
+    var stim_media_display_instruction = $("#StimulusMedia_Generated_MediaControl_Instruction");
+    var content_width = $('#StimulusMedia_Generated_MediaControl_list-presenter').innerWidth(); 
+    var width_of_thumb = 0;
+    css_margin = content_width/2;
+
+    stim_media_display_instruction.css("font-weight","bold");
+    //stim_media_div.css("border","solid 1px black");
+    stim_media_div.children().children().children().load(function(){
+        if($(this).innerWidth()&lt;400){
+            width_of_thumb = width_of_thumb + (parseInt($(this).innerWidth()))/2;
+            $(this).css("border","solid 1px black");
+        }
+        
+        stim_media_div.css("margin-left",(css_margin-width_of_thumb));
+    });
+});
+&lt;/script&gt;     
+    </pre>
+    <pre>
+// Autosubmit code, which checks periodically if the next button is disabled and if it is not, clicks it.
+// Also by default, the next button is disabled while Sedric speaks, so it would be good idea to enable the next button from Page properties
+// Once you want to submit the page, you need to call 
+// Keywords - auto, submit, automatically
+&lt;script type="text/javascript"&gt;
+    function doAutosubmit(){
+        if(document.getElementById('NextButton').disabled == true)
+            setTimeout("doAutosubmit()", 133);
+        else
+            $('#NextButton').click();
+    }
+
+    $(document).ready( function() {
+        $("div#Contents").hide();
+        $("div#Content").hide();
+        doAutosubmit();
+    });
+&lt;/script&gt;     
+    </pre>
+    <pre>
+// Makes width of the page bigger.
+// Could be used if grid headers are with long text
+// Also if the concept image need to be bigger
+// Keywords - juicer, expand
+#Contents {
+    width:100%;
+}       
+    </pre>
+    <pre>
+// Bold display instruction of concept
+// Can be put in media container controller javascript box
+// Keywords - bolds, concepts, stimuli, stimulus, MCC, title, name
+&lt;script type="text/javascript"&gt;
+    $('span[id*="_Generated_MediaControl_Instruction"]').css("font-weight","bold");
+&lt;/script&gt;     
+    </pre>
+    <pre>
+// Validate floating point value
+// Keywords - number, textbox, value, number, float, evaluate, check, regular expression
+
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4-min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+    var isFloat = function (val) {
+        var floatRegExp = new RegExp(/^[0-9]{1,2}\.[0-9]{1,2}$/);
+        return floatRegExp.test(val)
+    }
+    
+    function fnSubmit_check() {
+        if (fnQuestion_isAnswered('textboxSavn', 'textbox')) {
+            var numberTextField = fnAnswer_getTextbox('textboxSavn');
+            if (!isFloat(numberTextField)) {
+                fnDialog_reset();
+                fnDialog_text('Please type in dollars and cents without using a dollar sign');
+                fnGlobalCancelSubmit(true);
+            }
+        }
+    }
+    
+    fnSubmit(fnSubmit_check);
+&lt;/script&gt;
+    </pre>
+    <pre>
+// Cancel submit in order to check how the hidden questions record data
+// It can be put in fnSubmit_success at the bottom of the function code
+// Or it can be added just like bellow if you don't have any other logic for fnSubmit_success()
+
+function fnSubmit_success(){
+    fnGlobalCancelSubmit(true);
+}       
+    </pre>
+    <pre>
+// PSM Textboxes instead of radio qeustions
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4-min.js"&gt;&lt;/script&gt;
+&lt;script type='text/javascript'&gt;
+$(document).ready(function () {
+    var allsavn = new Array('savnCheap','savnExpensive','savnTooExpensive','savnTooCheap');
+    for(i=0; i&lt;allsavn.length; i++){
+        var savns = allsavn[i];
+        Temp_SAVN = window[savns];
+        $(Temp_SAVN).keydown(function(event) {
+            if ( event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 || 
+                (event.keyCode == 65 &amp;&amp; event.ctrlKey === true) || 
+                (event.keyCode &gt;= 35 &amp;&amp; event.keyCode &lt;= 39))
+                return;
+            else if(event.shiftKey || (event.keyCode &lt; 48 || event.keyCode &gt; 57) &amp;&amp; 
+                    (event.keyCode &lt; 96 || event.keyCode &gt; 105 ))
+                event.preventDefault(); 
+        });
+    }
+});
+
+function fnSubmit_check() {
+    fnQuestion_isAnswered('savnCheap', 'textbox');
+    fnQuestion_isAnswered('savnExpensive', 'textbox');
+    fnQuestion_isAnswered('savnTooExpensive', 'textbox');
+    fnQuestion_isAnswered('savnTooCheap', 'textbox');
+    }
+
+function fnSubmit_success() {
+    var Cheap = Number(fnAnswer_getTextbox('savnCheap'));
+    var Expensive = Number(fnAnswer_getTextbox('savnExpensive'));
+    var TooExpensive = Number(fnAnswer_getTextbox('savnTooExpensive'));
+    var TooCheap = Number(fnAnswer_getTextbox('savnTooCheap'));
+    
+    if (((TooExpensive &gt; Expensive) &amp;&amp; 
+        (Expensive &gt; Cheap) &amp;&amp; 
+        (Cheap &gt; TooCheap)) === false) {
+              fnGlobalCancelSubmit(true);
+              fnDialog_text('The prices that you have entered above contradict');
+              fnDialog_show();
+   }
+}
+
+fnSubmit(fnSubmit_check, '', fnSubmit_success);
+&lt;/script&gt;     
+    </pre>
+    <pre>
+// Filter radio, checkbox question with headers
+// Keywords - heading, header
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4-min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+var numSubSelected = $("#pipe").html();
+fnAnswer_filterNumSub(savnQ1, 'checkbox', numSubSelected, 'show');
+var NumSubArr = numSubSelected.split('|');  // I - string
+var nubsubtoChangeArr = new Array();
+nubsubtoChangeArr = [0,1,9,15,31,38]; // X &lt;--labels in not filtered piping list with 43 responses
+var arrAfterSort = new Array();
+arrAfterSort = [0,1,9,15,31,38]; //here we store the responses to set the labels in front
+for(x=1; x&lt;arrAfterSort.length ;x++){
+    if(x != (arrAfterSort.length -1)){
+        for (i=NumSubArr.length-2; i&gt;=1; i--){
+            if((parseInt(NumSubArr[i]) &gt;= nubsubtoChangeArr[x]) &amp;&amp; 
+                (parseInt(NumSubArr[i]) &lt; nubsubtoChangeArr[x+1])){
+                    arrAfterSort[x] = parseInt(NumSubArr[i]);
+            }
+        }
+    }
+    else{
+        for (i=NumSubArr.length-2; i&gt;=1; i--){
+            if((parseInt(NumSubArr[i]) &gt;= nubsubtoChangeArr[x]) &amp;&amp; 
+                (parseInt(NumSubArr[i]) &lt; 43)){
+                    arrAfterSort[x] = parseInt(NumSubArr[i]); //replace 43 with the length of unfiltered piping
+            }
+        }
+    }
+}
+//alert(arrAfterSort[1]);       //  This code will only work
+//alert(arrAfterSort[2]);       //  if the filtered piping list
+//alert(arrAfterSort[3]);       //  begins with min element
+//alert(arrAfterSort[4]);       //  and ends with the max one !!!
+//alert(arrAfterSort[5]);   
+for(o=1;o&lt;arrAfterSort.length;o++){
+    fnQuestion_subHeading('savnQ1', 'checkbox', arrAfterSort[o], $("#head" + o.toString()).html());
+}
+
+function fnSubmit_check() {
+    fnQuestion_isAnswered('savnQ1', 'checkbox');
+}
+
+fnSubmit(fnSubmit_check);
+&lt;/script&gt;     
+    </pre>
+    <pre>
+// Sets the play button for video
+// Keywords - autoplay, false, pause, paused
+// Look for a line that looks like the one below in video code and change the false to true
+
+$f().onBeforePause(
+    function() {
+        // change to TRUE for play button
+        return false ;
+    }
+);  
+    </pre>
+    <pre>
+// Translate next and previous button for carousel images
+// Keywords - translate, previous, next, stimulus, stimuli, concept, concepts, image, images, change, replace
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4-min.js"&gt;&lt;/script&gt;
+    
+    $('#StimulusMedia_Generated_MediaControl_NextButton').html('Suivant');
+    $('#StimulusMedia_Generated_MediaControl_BackButton').html('Pr&amp;#233;c&amp;#233;dent');
+&lt;/script&gt;
+
+
+// $('#StimulusMedia_Generated_MediaControl_NextButton').val('Text'); // in some cases
+// $('#StimulusMedia_Generated_MediaControl_BackButton').val('Text'); // in some cases      
+    </pre>
+    <pre>
+// filter list of images, stimulus
+var WonConcept = $("#conceptMost").html();
+temp = WonConcept.split("|"); //0 - name ; 1 - number
+var tempBubText = $("#bubText").html();
+tempBubText = tempBubText.replace('[Stimulus]',temp[0]);
+fnSpeechBubble_setText(tempBubText);
+
+
+var images_1 = $("#ConstantMedia_Generated_MediaControl_list-presenter").find('img');
+var images_2 = $("#ConstantMedia_Generated_MediaControl_list-presenter").find('p');
+var targetId;
+var WonConceptFname = temp[1].toString();
+WonConceptFname = WonConceptFname + ".jpg"
+var counter=0;
+
+for (i=0;i&lt;images_2.length;i++){
+    for (y = 0; y&lt;2;y++){
+        if (images_2[i].innerText !== WonConceptFname) {
+            targetId = images_1[counter].id;
+            $("#"+targetId).remove();
+        }
+
+        counter++;
+        $(images_2[i]).remove();
+    }
+}
+
+function fnSubmit_check(){
+    fnQuestion_isAnswered('savnRadio', 'radio');
+    //fnGlobalCancelSubmit(true);
+}
+fnSubmit(fnSubmit_check);
+    </pre>
+    <pre>
+//Timer - works like a stopwatch
+//endsIn - sets how many milliseconds to count down
+//checkInterval - this is the frequence of checking if the time passed out
+//listener - listener function that will be executed after the time passes
+//all parameters are optional
+
+var Timer = function(endsIn, checkInterval, listener) {
+    var _endsIn = endsIn || 1000;
+    var _checkInterval = checkInterval || 100;
+    var _listener = listener;
+
+    var _isStarted = false;
+    var _countDown = endsIn || 1000;
+    
+    var _timerId = null;
+
+    var self = this;
+
+    this.start = function() {
+        _isStarted = true;
+        //console.log("start");
+
+        _timerId = window.setInterval(checkIfTimeEnded, _checkInterval);
+    };
+
+    this.isStarted = function () {
+        return _isStarted;
+    };
+
+    this.stop = function() {
+        _isStarted = false;
+        //console.log("stop");
+
+        if(_timerId) window.clearInterval(_timerId);
+    };
+
+    this.restart = function () {
+        //console.log("--------------restarting");
+
+        if(_isStarted) self.stop();
+        
+        _countDown = _endsIn;
+        //console.log("countdown: " + _countDown);
+
+        self.start();
+
+        //console.log("---------------restarted");
+    };
+
+    this.endsIn = function () {
+        return _countDown;
+    };
+
+    var listener = function () {
+        if(_listener) _listener.call(this);
+    };
+    
+    var checkIfTimeEnded = function () {
+        //console.log("millis left " + self.endsIn());
+
+        if(_countDown > 0) {
+            _countDown -= _checkInterval;
+        } else {
+            self.stop();
+            listener();
+        }
+    }
+}; 
+
+var searchedText = "";
+var myTimer = new Timer(
+    1000,
+    200,
+    function () {
+        if(!(searchedText == input.value)){
+            console.log("SEARCHED TEXT: " + input.value);
+            searchedText = input.value;
+        }
+    }
+);
+
+var input = document.getElementById("inputId");
+var inputValue = input.value;
+
+input.onkeyup = function () {
+    myTimer.restart();
+}
+    </pre>
+    <pre>
+var JsSearch = (function () {
+    // removes the given entity
+    Array.prototype.clean = function(deleteValue) {
+        for (var i = 0; i &lt; this.length; i++) {
+            if (this[i] == deleteValue) {       
+                this.splice(i, 1);
+                i--;
+            }
+        }
+
+        return this;
+    };
+
+    // shim for forEach 
+    if (!Array.prototype.forEach){
+        Array.prototype.forEach = function(fun /*, thisp*/){
+            var len = this.length;
+            if (typeof fun != "function") throw new TypeError();
+
+            var thisp = arguments[1];
+            for (var i = 0; i &lt; len; i++){
+                if (i in this) fun.call(thisp, this[i], i, this);
+            }
+        };
+    }
+
+    // shim for getElementsByClassName
+    (function () {
+        if(!document.getElementsByClassName){ //IE 8 doesnt support getElementsByClassName
+            document.getElementsByClassName = Element.prototype.getElementsByClassName = function(class_names) {
+                // Turn input in a string, prefix space for later space-dot substitution
+                class_names = (' ' + class_names)
+                // Escape special characters
+                .replace(/[~!@$%^&amp;*()_+\-=,./';:"?>&lt;[\]{}|`#]/g, '\\$&amp;')
+                // Normalize whitespace, right-trim
+                .replace(/\s*(\s|$)/g, '$1')
+                // Replace spaces with dots for querySelectorAll
+                .replace(/\s/g, '.');
+                return this.querySelectorAll(class_names);
+            };
+        }
+        //'
+    })();
+
+    var ID = 0;
+    var getUniqueId = function () {
+        return "id" + ++ID;
+    }
+
+    //----------------------- Search Class --------------------------
+    var Search = function (strToSearchFor, sources, lowCoincidenceLevel, maxResultsToShow) {
+        if(arguments.length &lt; 2)
+            throw new Error([
+                "Search constructor",
+                "Insufficient parameters, usage: " + 
+                "Search(strToSearchFor, sources, optLowCoincidenceLevel, optMaxResultsToShow)"
+            ]);
+
+        this.keywords = strToSearchFor.toLowerCase().split(" ").clean(" ");
+        this.sources = [];
+        for (var i = 0; i &lt; sources.length; i++) {
+            this.sources.push( new Source(sources[i]) ); 
+        };
+        //sources.forEach( function (obj) { });
+        this.lowCoincidenceLevel = lowCoincidenceLevel || 5;
+        this.maxResultsToShow = maxResultsToShow || 10;
+        this.results = [];
+
+        var self = this;
+
+        self.getResults = function () {
+            var _result = new Array();
+            self.sources.forEach(function (s){
+                s.calcCoincidenceLevel(self.keywords);
+                if (s.keywordsMatch != 0) _result.push(s);
+            });
+
+            _result.sort( function (w1, w2) {
+                if(w1.keywordsMatch != w2.keywordsMatch)
+                    return w2.keywordsMatch - w1.keywordsMatch;
+                else
+                    return w2.coincidenceLevel - w1.coincidenceLevel
+            });
+
+            return _result;
+        }
+    }
+
+    //----------------------- Source Class ---------------------------
+    var Source = function (htmlObj) {
+        var self = this;
+
+        if(htmlObj.id) {
+            this.id = htmlObj.id;
+        } else {
+            this.id = getUniqueId();
+            htmlObj.setAttribute("id", self.id)
+        }
+
+        this.words = {};
+        this.wordCount = 0;
+        this.coincidenceLevel = 0;
+        this.keywordsMatch = 0.0;
+
+        var self = this;
+
+        var txtCont = htmlObj.textContent;
+        var txtCont = txtCont.replace(/[&amp;\/\\#\n,+()$~%.'":*?&lt;&gt;{}|;=!-]/g, " ").replace(/toString/gi, " ").toLowerCase();
+        txtCont.split(" ").clean("").forEach( function (word) {
+            var w = word.trim();
+            if(self.words[w]) self.words[w].increaseFrequency();
+            else self.words[w] = new Word(w);
+
+            self.wordCount++;
+        });
+    }
+
+    Source.prototype = {
+
+        constructor: Search,
+
+        getWord: function (word) {
+            return self.words[word];
+        },
+
+        calcCoincidenceLevel: function (searchWords) {
+            //coincidence level
+            var cl = 0.0; 
+            var wordMatch = 0;
+            var self = this;
+
+            searchWords.forEach( function (srcWord) {
+                var sw = srcWord.trim();
+                if(self.words[sw]){
+                    cl += parseFloat(self.words[sw].frequency / self.wordCount)
+                    wordMatch++;
+                }
+            });
+
+            var cl = cl/searchWords.length*100.0;
+            self.coincidenceLevel = cl;
+            self.keywordsMatch = parseFloat(wordMatch/searchWords.length*100);
+            
+            return cl;
+        }
+    }
+
+    //----------------------- Word Class -------------------------
+    var Word = function (text){
+        this._text = text;
+        this.frequency = 1;
+
+        var self = this;
+    }
+
+    Word.prototype = {
+
+        constructor: Word,
+
+        getText: function () {
+            return this._text;
+        },
+
+        increaseFrequency: function (){
+            var self = this;
+            self.frequency++;
+        }
+    }
+
+    //----------------------- Result Class -------------------------
+    var Result = function (sources, resultContainer){
+        this.sources = sources;
+        this.resultContainer = resultContainer;
+        this.noResults = "No results!";
+    }
+
+    Result.prototype = {
+
+        constructor: Result,
+
+        render: function () {
+            var self = this;
+            var listItem = document.createElement("li");
+            var list = document.createElement("ol");
+            list.setAttribute("id", "results");
+
+            self.sources.forEach( function (s) {
+                var li = listItem.cloneNode(false);
+                li.onmouseover = function () {
+                    var height = this.firstChild.offsetHeight;
+                    this.setAttribute("style", "max-height:"+height+"px !important");
+                }
+                li.onmouseout = function () {
+                    // do nothing
+                }
+
+                var srcOriginal = document.getElementById(s.id);
+                var srcCopy = srcOriginal.cloneNode(true);
+                srcCopy.className = "prettyprint linenums";
+                li.appendChild(srcCopy);
+                list.appendChild(li);
+            });
+
+            if(self.sources.length &lt;= 0) {
+                listItem.textContent = self.noResults;
+                list.appendChild(listItem);
+            }
+
+            if(self.resultContainer){
+                while (self.resultContainer.firstChild) {
+                    self.resultContainer.removeChild(self.resultContainer.firstChild);
+                }
+
+                self.resultContainer.appendChild(list);
+            } else {
+                document.body.appendChild(list);
+            }
+        }
+    };
+
+    return {
+        Search: Search,
+        Result: Result,
+    }
+})();
+    </pre>
+    <pre>
+// translate next and previous button for carousel images
+// keywords - translate, previous, next, stimulus, stimuli, concept, concepts, image, images
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4-min.js"&gt;&lt;/script&gt;
+    
+    $('#StimulusMedia_Generated_MediaControl_NextButton').html('Suivant');
+    $('#StimulusMedia_Generated_MediaControl_BackButton').html('Pr&amp;#233;c&amp;#233;dent');
+&lt;/script&gt;
+    </pre>
+    <pre>
+/* set new style for the bubble
+   keywords: bubble, style, background, back ground, overwrite, css */
+.bubbleBottom{
+    display:none;     // Removes the bottom black line of the bubble square
+}      
+
+.bubbleTop{
+    display:none;     // Removes the upper black line of the bubble square
+}
+
+.bubbleR{ 
+    display:none;      // Removes the right black line of the bubble square
+}
+
+#Header{
+    background-color:rgb(255,255,255);
+}
+
+#Footer{
+    background-color:rgb(255,255,255);
+}
+.bubbleL {
+    background-image: url("http://live.brainjuicer.com/bjlive/custompages/juicer/442649/images/bubbleLeft.gif");
+}
+.bubbleBL {
+    background-image: url("http://live.brainjuicer.com/bjlive/custompages/juicer/442649/images/bubbleBL.gif");
+}
+.bubbleTL {
+    background-image: url("http://live.brainjuicer.com/bjlive/custompages/juicer/442649/images/bubbleTL.gif");
+}
+.bubbleTR {
+    background-image: url("http://live.brainjuicer.com/bjlive/custompages/juicer/442649/images/bubbleTR.gif");
+}
+.bubbleBR {
+    background-image: url("http://live.brainjuicer.com/bjlive/custompages/juicer/442649/images/bubbleBR.gif");
+}
+    </pre>
+    <pre>
+// grid, fix, gridfix, first, column, question, width
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+    fnHotfix_gridratingWidth('savnGrid', 'radiogrid', 30);
+&lt;/script&gt;
+    </pre>
+    <pre>
+//Pipe Other Please specify text in the bubble text
+//Keywords: insert
+
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4-min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+    var otherPleaseSpecify = fnQuestion_getCustomText('hiddenOther');
+    var selection = fnQuestion_getCustomText('hiddenNumSub');
+
+    if (otherPleaseSpecify == '') {
+        var mySpeechText = $('#ForAnswer').html();
+        fnSpeechBubble_setText(mySpeechText);
+    } else {
+        var mySpeechText = $('#ForOther').html();
+        fnSpeechBubble_setText(mySpeechText);
+    }
+    $(savnPleaseSpecify).hide();
+
+    var is_checked_other = 0;
+
+    $(savnWhere).click( function() {
+        list_of_checked = "|" + fnAnswer_getSelectedNumSub('savnWhere', 'radio') + "|";
+        if(list_of_checked.indexOf("|8|")!==-1){
+            is_checked_other=1;
+            $(savnPleaseSpecify).show("slow");
+        } else {
+            fnAnswer_setTexbox(savnPleaseSpecify, '');
+            is_checked_other=0;
+            $(savnPleaseSpecify).hide("slow");
+        }
+    });
+
+    function fnSubmit_check(){
+        fnQuestion_isAnswered('savnWhere', 'radio');
+        if(is_checked_other==1){
+            fnQuestion_isAnswered('savnPleaseSpecify', 'textbox');
+        }
+    }
+    function fnSubmit_success(){}
+
+    fnSubmit(fnSubmit_check, '', fnSubmit_success);
+&lt;/script&gt;
+    </pre>
+    <pre>
+// Single Media's Title Remover
+// Keywords: simgle, media, stimulus, stimuli, image, concept, tittle, hide, remove
+&lt;script type="text/javascript"&gt;
+    $(document).ready(function() {
+      $('div[id$="Media_Generated_MediaControl_single-presenter"] p').hide();
+    });
+&lt;/script&gt;
+    </pre>
+    <pre>
+// The following code should hide concept names on selection Least/Most idea for Predictive Markets
+// Predictive Market, PM, Concept, Stimulus, Stimuli, Least, Most, name
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt; 
+    $(document).ready( function() {
+        $('div[class$="singleMediaMedia"] p').hide();
+    });
+&lt;/script&gt;
+    </pre>
+    <pre>
+// Single Stimulus concept alignment CSS
+// CSS, stimulus, stimuli, concept, alignment, align, left, right, center, single, media
+// How to - navigate to the juicer properties and add the following css override
+.singleMediaDescription{text-align:left};
+    </pre>
+    <pre>
+// Hide concept names for single stimulus concept
+// Open the MCC in the main template, and click on the Presentation tab paste the following code into the Javascript box
+
+$(document).ready( function() {
+  $('div[id$="Media_Generated_MediaControl_single-presenter"] p').hide();
+});     
+    </pre>
+    <pre>
+// Filter by responses for checkbox, radio, radio grid, checkbox grid question
+// Keywords - checkbox, radio, grid, radiogrid, checkboxgrid, filter, hide, show, get selected, collect, save selection, saver, store, storer, hidden div, pipe, delimited list, numsubs
+// filter radio/checkbox question
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4-min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+function fnSubmit_check() {
+    fnQuestion_isAnswered('savn_q1', 'checkbox'); 
+}
+
+function fnSubmit_success() {
+    strListSelected = "|" + fnAnswer_getSelectedNumSub(savn_q1, 'checkbox') + "|";
+    // strListSelected = strListSelected + "14|"; - If you need to force None of the Above 
+
+    fnAnswer_setTexbox(hiddenTextbox, strListSelected);  
+}
+
+fnSubmit(fnSubmit_check, '', fnSubmit_success);
+&lt;/script&gt;
+
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4-min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+    fnAnswer_filterNumSub('qTwo', 'checkbox', fnQuestion_getCustomText('hiddenNumSub'), 'show');
+&lt;/script&gt;
+
+// filter grid question by rows
+fnAnswer_filterNumSubGrid('savnGrid', 'radiogrid', fnQuestion_getCustomText('hiddenNumSub'), 'show');
+
+//filter grid question by columns
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4-min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+ $("#Contents").css("width","98%");
+ fnHotfix_grid("savnGrid", "checkboxgrid", 25, "", false, false);
+ fnAnswer_filterNumSubGrid("savnGrid", "checkboxgrid", "", "hide", "", $("#q17seletion").html(), "show", true);
+&lt;/script&gt;
+
+// If you need to force Other to be shown
+fnAnswer_filterNumSub('qTwo', 'checkbox', fnQuestion_getCustomText('hiddenNumSub') + '|13|' , 'show');  
+&lt;/script&gt;
+
+// This goes into the FREE TEXT
+&lt;div id="hiddenNumSub" style="display:none;"&gt;[InsertQuestionAnswer Id="87159" Text="Hidden : QuestionOne Textbox"]&lt;/div&gt;
+&lt;div style="display:none;"&gt;&lt;/div&gt;
+    
+    
+// HIDE
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4-min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+    var hideThose = fnQuestion_getCustomText('hiddenNumSub');
+    //if not used, function for hiding will not work
+    var listToHide = fnDelimitedList_deleteEnds(hideThose); 
+    fnAnswer_filterNumSub('savnTerca', 'checkbox', listToHide, 'hide');
+&lt;/script&gt;     
+    </pre>
+    <pre>
+// Hide Progress Bar in the Juicer
+// Keywords - bubble, thermometer, css
+// How to - Juicer Properties -&gt; CSS override - paste the code bellow
+#ProgressDiv {
+    display:none;
+}       
+    </pre>
+    <pre>
+// Change bubble text 
+// Keywords - bubble, rotation, predictive market, Sedric, text, replace, set
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4-min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+    fnSpeechBubble_setText('Which of these faces best expresses ...'); 
+&lt;/script&gt; 
+    </pre>
+    <pre>
+// Validate number textbox input
+// Keywords - integer, float, decimal, floating point, textbox, input type text, box, field
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4-min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+
+var isNumber = function (val) {
+    return (isNaN(val))? false: true;
+}
+
+function fnSubmit_check() {
+    fnQuestion_isAnswered('qspended', 'textbox'); 
+}
+
+function fnSubmit_success() {
+    if (!isNumber(fnAnswer_getTextbox('qspended'))) {
+        fnDialog_text('Please select your favoirite brand');
+        fnGlobalCancelSubmit(true);
+    }
+}
+
+fnSubmit(fnSubmit_check, '', fnSubmit_success);
+&lt;/script&gt;
+    </pre>
+    <pre>
+// Seven point grid scale - calculate points, if greater than 0 continue, else screen out
+// Keywords - accumulate, score
+&lt;script type="text/javascript" src="js/custom/customFunctions-1.0.4-min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+fnHotfix_grid('savnGrid', 'radiogrid', 50, '', false, false);
+$('#Content').show();
+
+function fnSubmit_check() {
+    fnQuestion_isAnsweredGrid('savnGrid', 'radiogrid');
+}
+
+function fnSubmit_success(){
+    var intTotal = 0;
+    var allcases = new Array(0,3,2,1,0,-1,-2,-3);
+    
+    for(y=1; y&lt;6; y++){
+        for(x=1; x&lt;8; x++){
+            var intGridNumSub = Number(fnAnswer_countGridColumnsSelected('savnGrid', 'radiogrid', x.toString(), y.toString()));
+            if (intGridNumSub == 1){
+                intTotal += allcases[x];
+            }
+        }
+    }
+    if (intTotal &lt; 0){
+    fnAnswer_setRadio('SAVN OF THE RADIO', 1); // CONTINUE WITH JUICER
+    } else {
+    fnAnswer_setRadio('SAVN OF THE RADIO', 2); // SCREENOUT
+    }
+    fnAnswer_setTexbox('SAVNOF THE TEXTBOX', intTotal); // SET THE POINTS
+}
+fnSubmit(fnSubmit_check, '', fnSubmit_success);
+&lt;/script&gt;
+    </pre>
+        </div> <!-- end of sources -->
+	</body>
+</html>

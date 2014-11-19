@@ -1,0 +1,61 @@
+ol, ul, li, pre, div, span, section, aside{
+    padding: 0px;
+    margin: 0px;
+}
+
+#sources{
+	display: none;	
+}
+
+#results{
+    display: block;
+    width:  700px;
+    padding: 0px;
+    margin: 0px;
+}
+
+#results>li {
+    height: 150px;
+    overflow: hidden;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+
+    padding: 0px;
+    margin-left: 5px;
+    margin-top: 5px;
+
+    transition-property:  box-shadow, margin;
+    transition-duration:0.25s;
+    transition-timing-function:linear;
+    transition-delay:0s;
+}
+
+#results>ol{
+    padding: 0px;
+
+}
+
+#results>li>pre{
+    margin: 0px;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.resultsClick {
+    z-index: 100 !important;
+    height: 10000px !important;
+    margin-top: 15px !important;
+    margin-left: 0px !important;
+    margin-right: 5px !important;
+    margin-bottom: 15px !important;
+
+    box-shadow: 10px 10px 5px #888888;
+}
+
+button {
+    width 
+}
